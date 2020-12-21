@@ -1,15 +1,14 @@
-# App Title Here...
+# Project Name ...
 
-App description here...
+Project desctiption ...
 
 ## Installation
-
 1. Clone the repository and install dependencies
 
 ```bash
 git clone <repo>
 cd <project-directory>
-git checkout develep
+git checkout <branch>
 npm install
 ```
 
@@ -19,12 +18,14 @@ npm install
 cd <project-directory>
 npm start
 ```
-## Pull Request
-All changes should be made by Pull Request only. Naming convention should be as follows.
 
-- feature/JIRA-TICKET-description
-- bugfix/JIRA-TICKET-description
-- quickUpdate/THREE-85-description
+## Dependencies Added
+- [eslint](https://eslint.org/)
+- [prettier](https://prettier.io/)
+- [hunky](https://github.com/Ulflander/hunk.js)
+- [redux](https://redux.js.org/)
+- [react-redux](https://react-redux.js.org/)
+- [redux-thunk](https://github.com/reduxjs/redux-thunk)
 
 ## Contributing
-Only by Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+Changes are made by Pull Request.
