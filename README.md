@@ -22,7 +22,7 @@ npm start
 ## Dependencies Added
 - [eslint](https://eslint.org/)
 - [prettier](https://prettier.io/)
-- [hunky](https://github.com/Ulflander/hunk.js)
+- [husky](https://github.com/Ulflander/hunk.js)
 - [redux](https://redux.js.org/)
 - [react-redux](https://react-redux.js.org/)
 - [redux-thunk](https://github.com/reduxjs/redux-thunk)
