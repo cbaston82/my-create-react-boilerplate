@@ -26,6 +26,7 @@ npm start
 - [redux](https://redux.js.org/)
 - [react-redux](https://react-redux.js.org/)
 - [redux-thunk](https://github.com/reduxjs/redux-thunk)
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 
 ## Contributing
 Changes are made by Pull Request.
