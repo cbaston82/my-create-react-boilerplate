@@ -3,7 +3,7 @@
 Project desctiption ...
 
 ## Installation
-1. Clone the repository and install dependencies
+1. Clone the repository and install dependencies.
 
 ```bash
 git clone <repo>
