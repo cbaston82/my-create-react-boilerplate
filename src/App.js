@@ -1,39 +1,43 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import exampleAction from './actions/exampleAction';
-import HomeComponent from './components/home/HomeComponent';
+import { fetchUsers } from './actions/userActions';
 
-class App extends Component {
-    exampleAction = () => {
-        this.props.exampleAction();
-    }
+function App({ userData, fetchUsersAction }) {
+    useEffect(fetchUsersAction, []);
 
-    render() {
-        return (
-            <div className="App">
-                <HomeComponent />
-                <button onClick={this.exampleAction}>Test redux action</button>
-                <pre>
-                    {
-                        JSON.stringify(this.props)
-                    }
-                </pre>
+    return userData.loading ? (
+        <h2>Loading</h2>
+    ) : userData.error ? (
+        <h2>{userData.error}</h2>
+    ) : (
+        <>
+            <h2>List of Users</h2>
+            <div>
+                {
+                    userData
+                    && userData.users
+                    && userData.users.map((user) => <p key={user.id}>{user.name}</p>)
+                }
             </div>
-        );
-    }
+        </>
+    );
 }
 
 const mapStateToProps = (state) => ({
-    ...state,
+    userData: state.user,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    exampleAction: () => dispatch(exampleAction()),
+    fetchUsersAction: () => dispatch(fetchUsers()),
 });
 
 App.propTypes = {
-    exampleAction: PropTypes.func,
+    fetchUsersAction: PropTypes.func,
+    userData: PropTypes.object,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(App);
